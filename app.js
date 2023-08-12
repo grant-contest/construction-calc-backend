@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors())
 
-app.get("/regions", function (request, response) {
+app.get("api/regions", function (request, response) {
   const content = readFileSync("./base/regions.json","utf8");
   const regions = JSON.parse(content);
   response.send(regions);

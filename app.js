@@ -1,12 +1,16 @@
 // подключение express
 const express = require("express");
+const {appendFile, readFileSync} = require("fs");
+const cors = require("cors");
 // создаем объект приложения
 const app = express();
-// определяем обработчик для маршрута "/"
-app.get("/", function(request, response){
+app.use(cors())
 
-  // отправляем ответ
-  response.send("<h2>Привет Express!</h2>");
+app.get("/regions", function (request, response) {
+  const content = readFileSync("./base/regions.json","utf8");
+  const regions = JSON.parse(content);
+  response.send(regions);
 });
+
 // начинаем прослушивать подключения на 8000 порту
 app.listen(8000);

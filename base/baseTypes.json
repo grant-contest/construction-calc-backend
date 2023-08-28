@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "Свайный",
+    "hint": "Выберите тип фундамента",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/15.svg",
+    "price": "479344",
+    "checked": false
+  },
+  {
+    "id": "2",
+    "title": "Столбчатый",
+    "hint": "Выберите тип фундамента",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/15.svg",
+    "price": "479344",
+    "checked": false
+  },
+  {
+    "id": "3",
+    "title": "Ленточный",
+    "hint": "Выберите тип фундамента",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/15.svg",
+    "price": "479344",
+    "checked": false
+  },
+  {
+    "id": "4",
+    "title": "Плитный",
+    "hint": "Выберите тип фундамента",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/15.svg",
+    "price": "479344",
+    "checked": false
+  }
+]

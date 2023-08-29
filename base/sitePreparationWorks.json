@@ -5,7 +5,13 @@
     "hint": "Выберите участок для строительства дома",
     "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/1.svg",
     "price": 11544,
-    "checked": false
+    "checked": false,
+    "works": [
+      {
+        "name": "Подбор участка",
+        "price": 11544
+      }
+    ]
   },
   {
     "id": "2",
@@ -13,7 +19,13 @@
     "hint": "Получите точные",
     "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/1.svg",
     "price": 11544,
-    "checked": false
+    "checked": false,
+    "works": [
+      {
+        "name": "Геодезические работы",
+        "price": 11544
+      }
+    ]
   },
   {
     "id": "3",
@@ -21,7 +33,13 @@
     "hint": "Получите точные",
     "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/1.svg",
     "price": 11544,
-    "checked": false
+    "checked": false,
+    "works": [
+      {
+        "name": "Геологические работы",
+        "price": 11544
+      }
+    ]
   },
   {
     "id": "4",
@@ -29,6 +47,16 @@
     "hint": "Получите точные",
     "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/1.svg",
     "price": 11544,
-    "checked": false
+    "checked": false,
+    "works": [
+      {
+        "name": "Срезка кустарника и мелколесья в грунтах естественного залегания кусторезами на тракторе",
+        "price": 11544
+      },
+      {
+        "name": "Очистка участка от мусора",
+        "price": 11544
+      }
+    ]
   }
 ]

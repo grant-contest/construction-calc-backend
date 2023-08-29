@@ -13,8 +13,8 @@ app.get("/api/regions", function (request, response) {
   response.send(regions);
 });
 
-app.get("/api/site-preparation-jobs", function (request, response) {
-  const content = readFileSync("./base/sitePreparationJobs.json","utf8");
+app.get("/api/site-preparation-works", function (request, response) {
+  const content = readFileSync("./base/sitePreparationWorks.json","utf8");
   const jobs = JSON.parse(content);
 
   response.send(jobs);

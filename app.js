@@ -103,9 +103,8 @@ app.get("/api/stairs-material", function (request, response) {
 
 
 /*  запросы в рекомендательную систему  */
-app.post("/api/recommedation-system/step1", function (request, response) {
-  const homeParams = request.body.homeParams;
-  // Создание запроса
+app.post("/api/recommedation-system/step1", function (req, res) {
+  const homeParams = req.body.homeParams;
   const step1_request = {
     step0: {
       houseArea: homeParams.homeSquare,
@@ -117,19 +116,19 @@ app.post("/api/recommedation-system/step1", function (request, response) {
     },
   };
 
-// Вызов метода recomend_step1 на сервере
   grpc_client.recomend_step1(step1_request, (error, response) => {
     if (error) {
       console.error(error);
       return;
     }
     console.log('Response:', response.step1);
+    res.send(response.step1);
   });
 })
 
-app.post("/api/recommedation-system/step2", function (request, response) {
-  const homeParams = request.body.homeParams;
-  // Создание запроса
+app.post("/api/recommedation-system/step2", function (req, res) {
+  const homeParams = req.body.homeParams;
+  const step1Req = req.body.step1;
   const step2_request = {
     step0: {
       houseArea: homeParams.homeSquare,
@@ -141,30 +140,76 @@ app.post("/api/recommedation-system/step2", function (request, response) {
     },
     step1: {
       sitePreparation: {
-        siteChoosing: true,
-        geologicalWorks: true,
-        geodeticalWorks: true,
-        cuttingBushesAndSmallForests: true,
-        clearingTheSiteOfDebris: true,
+        siteChoosing: step1Req.sitePreparation.siteChoosing,
+        geologicalWorks: step1Req.sitePreparation.geologicalWorks,
+        geodeticalWorks: step1Req.sitePreparation.geodeticalWorks,
+        cuttingBushesAndSmallForests: step1Req.sitePreparation.cuttingBushesAndSmallForests,
+        clearingTheSiteOfDebris: step1Req.sitePreparation.clearingTheSiteOfDebris,
       },
       SiteWorks: {
-        cameras: true,
-        temporaryFence: true,
+        cameras: step1Req.SiteWorks.cameras,
+        temporaryFence: step1Req.SiteWorks.temporaryFence,
       },
       HouseDesignAndProject: {
-        homeProject: true,
-        designProject: true,
+        homeProject: step1Req.HouseDesignAndProject.homeProject,
+        designProject: step1Req.HouseDesignAndProject.designProject,
       }
     }
   };
 
-// Вызов метода recomend_step1 на сервере
   grpc_client.recomend_step2(step2_request, (error, response) => {
     if (error) {
       console.error(error);
       return;
     }
     console.log('Response:', response.step2);
+    res.send(response.step2);
+  });
+})
+
+app.post("/api/recommedation-system/step3", function (req, res) {
+  const homeParams = req.body.homeParams;
+  const step1Req = req.body.step1;
+  const foundationType = req.body.foundationType;
+
+  const step3_request = {
+    step0: {
+      houseArea: homeParams.homeSquare,
+      siteArea: homeParams.areaSquare,
+      floorCount: homeParams.floor,
+      region: homeParams.region,
+      budgetFloor: homeParams.budgetFrom,
+      budgetCeil: homeParams.budgetUpto,
+    },
+    step1: {
+      sitePreparation: {
+        siteChoosing: step1Req.sitePreparation.siteChoosing,
+        geologicalWorks: step1Req.sitePreparation.geologicalWorks,
+        geodeticalWorks: step1Req.sitePreparation.geodeticalWorks,
+        cuttingBushesAndSmallForests: step1Req.sitePreparation.cuttingBushesAndSmallForests,
+        clearingTheSiteOfDebris: step1Req.sitePreparation.clearingTheSiteOfDebris,
+      },
+      SiteWorks: {
+        cameras: step1Req.SiteWorks.cameras,
+        temporaryFence: step1Req.SiteWorks.temporaryFence,
+      },
+      HouseDesignAndProject: {
+        homeProject: step1Req.HouseDesignAndProject.homeProject,
+        designProject: step1Req.HouseDesignAndProject.designProject,
+      }
+    },
+    step3: {
+      foundationType: foundationType,
+    }
+  };
+
+  grpc_client.recomend_step3(step3_request, (error, response) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+    console.log('Response:', response.step3);
+    res.send(response.step3);
   });
 })
 

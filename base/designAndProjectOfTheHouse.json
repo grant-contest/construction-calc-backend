@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Проект дома",
+    "hint": "Выберите из каталога индивидуальный проект будущего дома",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/7.svg",
+    "price": 53040,
+    "checked": false,
+    "works": [
+      {
+        "name": "Проект дома",
+        "price": 53040,
+        "materials": [
+          {
+            "name": "Не требуется",
+            "price": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Дизайн-проект",
+    "hint": "Закажите индивидуальный проект интерьера, в рамках которого дизайнеры смогут воплотить все пожелания по оформлению интерьеров жилья",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/8.svg",
+    "price": 159104,
+    "checked": false,
+    "works": [
+      {
+        "name": "Дизайн-проект",
+        "price": 159104,
+        "materials": [
+          {
+            "name": "Не требуется",
+            "price": 0
+          }
+        ]
+      }
+    ]
+  }
+]

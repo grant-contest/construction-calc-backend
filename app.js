@@ -22,15 +22,15 @@ app.get("/api/site-preparation-works", function (request, response) {
 });
 app.get("/api/works-on-the-site", function (request, response) {
   const content = readFileSync("./base/page-1/worksOnTheSite.json","utf8");
-  const jobs = JSON.parse(content);
+  const worksSite = JSON.parse(content);
 
-  response.send(jobs);
+  response.send(worksSite);
 });
 app.get("/api/design-and-project-of-the-house", function (request, response) {
   const content = readFileSync("./base/page-1/designAndProjectOfTheHouse.json","utf8");
-  const jobs = JSON.parse(content);
+  const design = JSON.parse(content);
 
-  response.send(jobs);
+  response.send(design);
 });
 
 // Page-2
@@ -42,13 +42,49 @@ app.get("/api/base-types", function (request, response) {
 });
 
 // Page-3
-
-// базу ещё не заполнил
 app.get("/api/wall-material", function (request, response) {
   const content = readFileSync("./base/page-3/wallMaterial.json","utf8");
-  const baseTypes = JSON.parse(content);
+  const wallMaterial = JSON.parse(content);
 
-  response.send(baseTypes);
+  response.send(wallMaterial);
+});
+
+// Page-4
+app.get("/api/number-of-stingrays", function (request, response) {
+  const content = readFileSync("./base/page-3/numberOfStingrays.json","utf8");
+  const numberStingrays = JSON.parse(content);
+
+  response.send(numberStingrays);
+});
+
+app.get("/api/type-of-roof", function (request, response) {
+  const content = readFileSync("./base/page-3/typeOfRoof.json","utf8");
+  const typeOfRoof = JSON.parse(content);
+
+  response.send(typeOfRoof);
+});
+
+// Page-5
+app.get("/api/facade-technology", function (request, response) {
+  const content = readFileSync("./base/page-3/facadeTechnology.json","utf8");
+  const facadeTechnology = JSON.parse(content);
+
+  response.send(facadeTechnology);
+});
+
+// Page-8
+app.get("/api/rough-work", function (request, response) {
+  const content = readFileSync("./base/page-3/roughWork.json","utf8");
+  const roughWork = JSON.parse(content);
+
+  response.send(roughWork);
+});
+
+app.get("/api/stairs-material", function (request, response) {
+  const content = readFileSync("./base/page-3/stairsMaterial.json","utf8");
+  const stairsMaterial = JSON.parse(content);
+
+  response.send(stairsMaterial);
 });
 
 // начинаем прослушивать подключения на 8000 порту

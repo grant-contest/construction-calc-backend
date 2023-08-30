@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Один",
+    "hint": "",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/23.svg",
+    "price": 0,
+    "checked": false,
+    "works": []
+  },
+  {
+    "id": "2",
+    "title": "Два",
+    "hint": "",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/24.svg",
+    "price": 0,
+    "checked": false,
+    "works": []
+  },
+  {
+    "id": "3",
+    "title": "Три",
+    "hint": "",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/25.svg",
+    "price": 0,
+    "checked": false,
+    "works": []
+  },
+  {
+    "id": "4",
+    "title": "Четыре",
+    "hint": "",
+    "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/26.svg",
+    "price": 0,
+    "checked": false,
+    "works": []
+  }
+]

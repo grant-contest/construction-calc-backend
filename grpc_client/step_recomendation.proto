@@ -1,0 +1,240 @@
+syntax = "proto3";
+
+service Recomendation_system {
+  // Sends a greeting
+  rpc recomend_step1 (Step1Request) returns (Step1Response) {}
+  rpc recomend_step2 (Step2Request) returns (Step2Response) {}
+  rpc recomend_step3 (Step3Request) returns (Step3Response) {}
+  rpc recomend_step4 (Step4Request) returns (Step4Response) {}
+  rpc recomend_step5 (Step5Request) returns (Step5Response) {}
+  rpc recomend_step6 (Step6Request) returns (Step6Response) {}
+  rpc recomend_step7 (Step7Request) returns (Step7Response) {}
+  rpc recomend_step8 (Step8Request) returns (Step8Response) {}
+  rpc recomend_step9 (Step9Request) returns (Step9Response) {}
+}
+
+message Step0 {
+  uint32 houseArea = 1;
+  uint32 siteArea = 2;
+  uint32 floorCount = 3;
+  string region = 4;
+  uint32 budgetFloor = 5;
+  uint32 budgetCeil = 6;
+}
+
+message SitePreparation {
+  bool siteChoosing = 1;
+  bool geologicalWorks = 2;
+  bool geodeticalWorks = 3;
+  bool cuttingBushesAndSmallForests = 4;
+  bool clearingTheSiteOfDebris = 5;
+}
+
+message SiteWorks {
+  bool cameras = 1;
+  bool temporaryFence = 2;
+}
+
+message HouseDesignAndProject {
+  bool homeProject = 1;
+  bool designProject = 2;
+}
+
+message Step1 {
+  SitePreparation sitePreparation = 1;
+  SiteWorks siteWorks = 2;
+  HouseDesignAndProject houseDesignAndProject = 3;
+}
+
+message Step2 {
+  string foundationType = 1;
+}
+
+message Step3 {
+  string wallsMaterial = 1;
+}
+
+message Step4 {
+  uint32 slopesNumber = 1;
+  string roofType = 2;
+}
+
+message Step5 {
+  string facadeTechnology = 1;
+}
+
+message Step6 {
+  string windowMaterial = 1;
+  string windowType = 2;
+  string doorMaterial = 3;
+}
+
+message Electrician {
+  bool plasticBoxesUpTo40mmWide = 1;
+  bool layingAThreeToFive = 2;
+  bool cableLaying = 3;
+  bool installationOfTwoKey = 4;
+  bool installationOfSingleKey = 5;
+  bool recessedTypeSocketDevice = 6;
+  bool installationOfPendant = 7;
+  bool chandeliersAndPendants = 8;
+}
+
+message WaterSupply {
+  bool layingOfInternalWaterSupplyPipelines = 1;
+  bool installationOfBathtubs = 2;
+  bool installationOfSingle = 3;
+  bool installationOfMixers = 4;
+}
+
+message Sewerage {
+  bool installationOfToilet = 1;
+  bool layingOfSewerage50mm = 2;
+  bool layingOfSewerage110mm = 3;
+}
+
+message Heating {
+  bool assemblyOfAWaterSupply = 1;
+  bool layingOfInternalHeatingPipelines = 2;
+  bool installationOfWindowFixtures = 3;
+}
+
+message Ventilation {
+  bool installationOfSplitSystems = 1;
+  bool cablingOnABrickWall = 2;
+}
+
+message Step7 {
+  Electrician electrician = 1;
+  WaterSupply waterSupply = 2;
+  Sewerage sewerage = 3;
+  Heating heating = 4;
+  Ventilation ventilation = 5;
+}
+
+message Step8 {
+  bool warmFloor = 1;
+  string ladderMaterial = 2;
+}
+
+message Step9 {
+  string wallDecoration = 1;
+  string floorCovering = 2;
+  string ceilCovering = 3;
+}
+
+
+
+
+
+
+message Step1Request {
+  Step0 step0 = 1;
+}
+
+message Step2Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+}
+
+message Step3Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+  Step2 step2 = 3;
+}
+
+message Step4Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+  Step2 step2 = 3;
+  Step3 step3 = 4;
+}
+
+message Step5Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+  Step2 step2 = 3;
+  Step3 step3 = 4;
+  Step4 step4 = 5;
+}
+
+message Step6Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+  Step2 step2 = 3;
+  Step3 step3 = 4;
+  Step4 step4 = 5;
+  Step5 step5 = 6;
+}
+
+message Step7Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+  Step2 step2 = 3;
+  Step3 step3 = 4;
+  Step4 step4 = 5;
+  Step5 step5 = 6;
+  Step6 step6 = 7;
+}
+
+message Step8Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+  Step2 step2 = 3;
+  Step3 step3 = 4;
+  Step4 step4 = 5;
+  Step5 step5 = 6;
+  Step6 step6 = 7;
+  Step7 step7 = 8;
+}
+
+message Step9Request {
+  Step0 step0 = 1;
+  Step1 step1 = 2;
+  Step2 step2 = 3;
+  Step3 step3 = 4;
+  Step4 step4 = 5;
+  Step5 step5 = 6;
+  Step6 step6 = 7;
+  Step7 step7 = 8;
+  Step8 step8 = 9;
+}
+
+
+
+// The response message containing the greetings
+message Step1Response {
+  Step1 step1 = 1;
+}
+
+message Step2Response {
+  Step2 step2 = 1;
+}
+
+message Step3Response {
+  Step3 step3 = 1;
+}
+
+message Step4Response {
+  Step4 step4 = 1;
+}
+
+message Step5Response {
+  Step5 step5 = 1;
+}
+
+message Step6Response {
+  Step6 step6 = 1;
+}
+
+message Step7Response {
+  Step7 step7 = 1;
+}
+
+message Step8Response {
+  Step8 step8 = 1;
+}
+
+message Step9Response {
+  Step9 step9 = 1;
+}

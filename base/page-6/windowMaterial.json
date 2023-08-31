@@ -13,7 +13,7 @@
     "title": "Пластиковые",
     "hint": "Выберите материал оконных рам",
     "image": "https://s32640.cdn.ngenix.net/external-resources/images/buildingMark/37.svg",
-    "price": 0
+    "price": 0,
     "checked": false,
     "works": []
   }

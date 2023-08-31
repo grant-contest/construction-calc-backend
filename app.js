@@ -86,6 +86,64 @@ app.get("/api/facade-technology", function (request, response) {
   response.send(facadeTechnology);
 });
 
+// Page-6
+app.get("/api/window-material", function (request, response) {
+  const content = readFileSync("./base/page-3/windowMaterial.json","utf8");
+  const windowMaterial = JSON.parse(content);
+
+  response.send(windowMaterial);
+});
+
+app.get("/api/type-of-windows", function (request, response) {
+  const content = readFileSync("./base/page-3/typeOfWindows.json","utf8");
+  const typeOfWindows = JSON.parse(content);
+
+  response.send(typeOfWindows);
+});
+
+app.get("/api/door-material", function (request, response) {
+  const content = readFileSync("./base/page-3/doorMaterial.json","utf8");
+  const doorMaterial = JSON.parse(content);
+
+  response.send(doorMaterial);
+});
+
+// Page-7
+app.get("/api/electrics", function (request, response) {
+  const content = readFileSync("./base/page-3/electrics.json","utf8");
+  const electrics = JSON.parse(content);
+
+  response.send(electrics);
+});
+
+app.get("/api/water-supply", function (request, response) {
+  const content = readFileSync("./base/page-3/waterSupply.json","utf8");
+  const waterSupply = JSON.parse(content);
+
+  response.send(waterSupply);
+});
+
+app.get("/api/sewage-system", function (request, response) {
+  const content = readFileSync("./base/page-3/sewageSystem.json","utf8");
+  const sewageSystem = JSON.parse(content);
+
+  response.send(sewageSystem);
+});
+
+app.get("/api/heating", function (request, response) {
+  const content = readFileSync("./base/page-3/heating.json","utf8");
+  const heating = JSON.parse(content);
+
+  response.send(heating);
+});
+
+app.get("/api/ventilation", function (request, response) {
+  const content = readFileSync("./base/page-3/ventilation.json","utf8");
+  const ventilation = JSON.parse(content);
+
+  response.send(ventilation);
+});
+
 // Page-8
 app.get("/api/rough-work", function (request, response) {
   const content = readFileSync("./base/page-3/roughWork.json","utf8");
@@ -101,6 +159,27 @@ app.get("/api/stairs-material", function (request, response) {
   response.send(stairsMaterial);
 });
 
+// Page-9
+app.get("/api/wall-decoration", function (request, response) {
+  const content = readFileSync("./base/page-3/wallDecoration.json","utf8");
+  const wallDecoration = JSON.parse(content);
+
+  response.send(wallDecoration);
+});
+
+app.get("/api/floor-covering", function (request, response) {
+  const content = readFileSync("./base/page-3/floorCovering.json","utf8");
+  const floorCovering = JSON.parse(content);
+
+  response.send(floorCovering);
+});
+
+app.get("/api/ceiling-covering", function (request, response) {
+  const content = readFileSync("./base/page-3/ceilingCovering.json","utf8");
+  const ceilingCovering = JSON.parse(content);
+
+  response.send(ceilingCovering);
+});
 
 /*  запросы в рекомендательную систему  */
 app.post("/api/recommedation-system/step1", function (req, res) {
